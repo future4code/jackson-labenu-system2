@@ -5,8 +5,7 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import { createTeacher } from "./endpoint/createTeacher";
 import { createMission } from "./endpoint/createMission";
-import { getMissions } from "./data/getMissions";
-import { createStudent } from "./endpoint/CreateStudent";
+import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
 
 dotenv.config();
@@ -27,9 +26,10 @@ app.use(express.json());
 app.use(cors())
 
 app.post("/mission/new", createMission);
-app.get("/mission", getAllMissions)
+
 app.post("/student/new", createStudent)
 
+app.get("/mission", getAllMissions)
 
 app.put("/teachers", createTeacher)
 
