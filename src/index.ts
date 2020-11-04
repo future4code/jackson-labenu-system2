@@ -4,6 +4,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import { createTeacher } from "./endpoint/createTeacher";
+import { createMission } from "./endpoint/createMission";
+import { getMissions } from "./data/getMissions";
+import { createStudent } from "./endpoint/CreateStudent";
+import { getAllMissions } from "./endpoint/getAllMissions";
 
 dotenv.config();
 
@@ -21,6 +25,10 @@ export const connection = knex({
 const app: Express = express();
 app.use(express.json());
 app.use(cors())
+
+app.post("/mission/new", createMission);
+app.get("/mission", getAllMissions)
+app.post("/student/new", createStudent)
 
 
 app.put("/teachers", createTeacher)
