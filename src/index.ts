@@ -3,6 +3,7 @@ import knex from "knex";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { createTeacher } from "./endpoint/createTeacher";
 
 dotenv.config();
 
@@ -20,6 +21,9 @@ export const connection = knex({
 const app: Express = express();
 app.use(express.json());
 app.use(cors())
+
+
+app.put("/teachers", createTeacher)
 
 
 
