@@ -3,6 +3,7 @@ import knex from "knex";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { createTeacher } from "./endpoint/createTeacher";
 import { createMission } from "./endpoint/createMission";
 import { getMissions } from "./data/getMissions";
 import { createStudent } from "./endpoint/CreateStudent";
@@ -28,6 +29,9 @@ app.use(cors())
 app.post("/mission/new", createMission);
 app.get("/mission", getAllMissions)
 app.post("/student/new", createStudent)
+
+
+app.put("/teachers", createTeacher)
 
 
 
