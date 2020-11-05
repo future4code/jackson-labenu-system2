@@ -7,6 +7,7 @@ import { createTeacher } from "./endpoint/createTeacher";
 import { createMission } from "./endpoint/createMission";
 import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
+import { studentOnMission } from "./endpoint/studentOnMission";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use(cors())
 app.post("/mission/new", createMission);
 
 app.post("/student/new", createStudent)
+
+app.post("/student/mission", studentOnMission)
 
 app.get("/mission", getAllMissions)
 
