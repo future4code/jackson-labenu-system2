@@ -1,6 +1,5 @@
 import {Response, Request} from "express"
 import {insertTeacher} from "../data/insertTeacher"
-import moment from "moment"
 
 
 
