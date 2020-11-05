@@ -9,6 +9,7 @@ import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
 import { studentOnMission } from "./endpoint/studentOnMission";
 import { teacherOnMission } from "./endpoint/teacherOnMission";
+import { getStudentByMission } from "./endpoint/getStudentByMission";
 
 dotenv.config();
 
@@ -27,9 +28,6 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors())
 
-app.post("/mission/new", createMission);
-
-app.post("/student/new", createStudent)
 
 app.post("/student/mission", studentOnMission)
 
@@ -37,7 +35,15 @@ app.post("/teacher/mission", teacherOnMission)
 
 app.get("/mission", getAllMissions)
 
+app.get("/student/mission", getStudentByMission)
+
 app.put("/teachers", createTeacher)
+
+app.put("/student/new", createStudent)
+
+app.put("/mission/new", createMission);
+
+
 
 
 
