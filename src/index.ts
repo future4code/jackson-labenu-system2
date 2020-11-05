@@ -7,6 +7,8 @@ import { createTeacher } from "./endpoint/createTeacher";
 import { createMission } from "./endpoint/createMission";
 import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
+import { getStudentAgeById } from "./endpoint/getAgeById";
+import { deleteStudent } from "./endpoint/deleteStudent";
 import { studentOnMission } from "./endpoint/studentOnMission";
 import { teacherOnMission } from "./endpoint/teacherOnMission";
 import { getStudentByMission } from "./endpoint/getStudentByMission";
@@ -35,13 +37,17 @@ app.post("/teacher/mission", teacherOnMission)
 
 app.get("/mission", getAllMissions)
 
+app.get("/age/:id", getStudentAgeById)
+
 app.get("/student/mission", getStudentByMission)
+
+app.put("/mission", createMission);
 
 app.put("/teachers", createTeacher)
 
-app.put("/student/new", createStudent)
+app.put("/student", createStudent)
 
-app.put("/mission/new", createMission);
+app.delete("/delete/student/:id", deleteStudent)
 
 
 
