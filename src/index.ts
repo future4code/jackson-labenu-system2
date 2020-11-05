@@ -8,6 +8,7 @@ import { createMission } from "./endpoint/createMission";
 import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
 import { studentOnMission } from "./endpoint/studentOnMission";
+import { teacherOnMission } from "./endpoint/teacherOnMission";
 
 dotenv.config();
 
@@ -31,6 +32,8 @@ app.post("/mission/new", createMission);
 app.post("/student/new", createStudent)
 
 app.post("/student/mission", studentOnMission)
+
+app.post("/teacher/mission", teacherOnMission)
 
 app.get("/mission", getAllMissions)
 
