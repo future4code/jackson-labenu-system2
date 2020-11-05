@@ -5,11 +5,13 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import { createTeacher } from "./endpoint/createTeacher";
 import { createMission } from "./endpoint/createMission";
-import { getMissions } from "./data/getMissions";
-import { createStudent } from "./endpoint/CreateStudent";
+import { createStudent } from "./endpoint/createStudent";
 import { getAllMissions } from "./endpoint/getAllMissions";
 import { getStudentAgeById } from "./endpoint/getAgeById";
 import { deleteStudent } from "./endpoint/deleteStudent";
+import { studentOnMission } from "./endpoint/studentOnMission";
+import { teacherOnMission } from "./endpoint/teacherOnMission";
+import { getStudentByMission } from "./endpoint/getStudentByMission";
 
 dotenv.config();
 
@@ -28,15 +30,26 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors())
 
+
+app.post("/student/mission", studentOnMission)
+
+app.post("/teacher/mission", teacherOnMission)
+
 app.get("/mission", getAllMissions)
+
 app.get("/age/:id", getStudentAgeById)
 
+app.get("/student/mission", getStudentByMission)
 
 app.put("/mission", createMission);
+
 app.put("/teachers", createTeacher)
+
 app.put("/student", createStudent)
 
 app.delete("/delete/student/:id", deleteStudent)
+
+
 
 
 
