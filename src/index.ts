@@ -12,7 +12,9 @@ import { deleteStudent } from "./endpoint/deleteStudent";
 import { studentOnMission } from "./endpoint/studentOnMission";
 import { teacherOnMission } from "./endpoint/teacherOnMission";
 import { getStudentByMission } from "./endpoint/getStudentByMission";
+import { deleteStudentFromMission } from "./endpoint/deleteStudentFromMission";
 import { getTeacherByMission } from "./endpoint/getTeacherByMission";
+
 
 dotenv.config();
 
@@ -51,6 +53,8 @@ app.put("/teachers", createTeacher)
 app.put("/student", createStudent)
 
 app.delete("/delete/student/:id", deleteStudent)
+
+app.delete("/student/mission/:id", deleteStudentFromMission)
 
 
 
