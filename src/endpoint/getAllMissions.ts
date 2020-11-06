@@ -11,7 +11,7 @@ export const getAllMissions = async (req: Request, res: Response) => {
 
       if (!missions.length) {
          res.statusCode = 404
-         throw new Error("No pokemons found")
+         throw new Error("Not Found")
       }
 
       res.status(200).send(missions)

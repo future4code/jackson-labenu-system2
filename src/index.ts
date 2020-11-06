@@ -14,6 +14,7 @@ import { teacherOnMission } from "./endpoint/teacherOnMission";
 import { getStudentByMission } from "./endpoint/getStudentByMission";
 import { deleteStudentFromMission } from "./endpoint/deleteStudentFromMission";
 import { getTeacherByMission } from "./endpoint/getTeacherByMission";
+import { StudentMissionUpdate } from "./endpoint/switchStudentMission";
 
 
 dotenv.config();
@@ -35,6 +36,8 @@ app.use(cors())
 
 
 app.post("/student/mission", studentOnMission)
+
+app.post("/student/mission/update", StudentMissionUpdate)
 
 app.post("/teacher/mission", teacherOnMission)
 
