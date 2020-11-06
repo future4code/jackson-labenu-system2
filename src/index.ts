@@ -48,7 +48,7 @@ app.get("/age/:id", getStudentAgeById) // Pegar idade pelo ID do estudante.
 
 app.get("/student/mission/:id", getStudentByMission) // Encontrar estudantes em uma determinada turma.
 
-app.get("/teacher/mission/id", getTeacherByMission)
+app.get("/teacher/mission/:id", getTeacherByMission) // Encontrar professor em uma determinada turma.
 
 app.put("/mission", createMission);
 
