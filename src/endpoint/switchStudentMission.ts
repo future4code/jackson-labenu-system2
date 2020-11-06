@@ -4,7 +4,7 @@ import  { updateStudentMission } from "../data/updateStudentMission"
 
 
 
-export const StudentMissionUpdate = async(req:Request, res:Response):Promise<void> => {
+export const studentMissionUpdate = async(req:Request, res:Response):Promise<void> => {
 
     try {
 
