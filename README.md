@@ -1,33 +1,52 @@
-## LabenuSystem:
+# LabenuSystem:
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+## Endpoint POST
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+```
+"/student/mission" -> Coloca um estudante em uma turma.
 
-1. Estudantes 
+"/student/mission/update" -> Troca um estudante de uma turma para outra.
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+"/teacher/mission" -> Coloca um professor em uma turma.
 
-2. Docente
+```
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+## Endpoint GET
 
-3. Turma
+```
+"/mission" -> Pega todas as turmas do sistema
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+"/age/:id" -> Pega a idade do estudante pelo ID
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+"/student/mission/:id" -> Encontra estudantes de uma determinada turma pelo ID da turma.
 
-As funcionalidades básicas são:
+"/teacher/mission/:id" -> Encontra professores de uma determinada turma pelo ID da turma.
 
-→ Criar estudante;
+```
 
-→ Criar docente;
+## Endpoint PUT
 
-→ Criar turma;
+```
+"/mission" -> Cria uma turma
 
-→ Adicionar estudante na turma;
+"/teachers" -> Cria professores
 
-→ Adicionar docente na turma;
+"/student" -> Cria um estudante 
 
-→ Pegar a idade de algum estudante a partir do id
+```
+
+## Endpoint DELETE
+
+```
+"/delete/student/:id" -> Deleta um estudante da tabela de estudantes.
+
+"/student/mission/:id" -> Deleta um estudante de uma determinada turma.
+
+"/teacher/mission/:id" -> Deleta um professor de uma determinada turma.
+
+
+```
+
+
+
+
