@@ -1,7 +1,6 @@
 import {Response, Request} from "express"
 import { removeTeacherFromMission } from "../data/removeTeacherFromMission"
 import { selectTeacherById } from "../data/selecetTeacherById"
-import { selectStudentById } from "../data/selectStudentById"
 
 
 export const deleteTeacherFromMission = async(req:Request, res:Response):Promise<void> => {

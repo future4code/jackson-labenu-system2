@@ -5,7 +5,7 @@ export const getStudentByMission = async(req:Request, res:Response):Promise<void
 
     try {
 
-        const studentByMission = await selectStudentByMission()
+        const studentByMission = await selectStudentByMission(Number(req.params.id))
 
         if(!studentByMission) {
             res.statusCode = 400;
@@ -14,7 +14,7 @@ export const getStudentByMission = async(req:Request, res:Response):Promise<void
 
         if(studentByMission.length === 0) {
             res.statusCode = 404;
-            throw new Error("Estudante não encontrado.")
+            throw new Error("Turma não encontrada ou não há estudantes na turma")
         }
 
         res.status(200).send(studentByMission)

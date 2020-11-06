@@ -1,5 +1,7 @@
 import { Request, Response } from "express"
 import { DeleteStudentById } from "../data/deleteStudent"
+import { deleteStudentFromRelation } from "../data/deleteStudentFromRelation"
+import { selectStudentByIdRelation } from "../data/selectStudentByIdRelation"
 
 
 
@@ -8,13 +10,18 @@ import { DeleteStudentById } from "../data/deleteStudent"
 export const deleteStudent = async (req: Request, res: Response):Promise<void> => {
    try {
 
-      const age = await DeleteStudentById(Number(req.params.id))
+      const uxerExist = await selectStudentByIdRelation(Number(req.params.id))
 
-      if (age.length === 0) {
-         res.status(404).send({meessage: "Not found!"})
-      } else {
-        res.status(200).send(age)
+      if (!uxerExist.length) {
+         res.statusCode = 404
+         throw new Error("Estudante não encontrado.")
       }
+
+      await deleteStudentFromRelation(Number(req.params.id))
+      await DeleteStudentById(Number(req.params.id))
+
+      res.send(200).send({message: "Estudante removido com sucesso."})
+      
    } catch (error) {
       res.send(error.message)
    }
