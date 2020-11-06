@@ -13,6 +13,7 @@ import { studentOnMission } from "./endpoint/studentOnMission";
 import { teacherOnMission } from "./endpoint/teacherOnMission";
 import { getStudentByMission } from "./endpoint/getStudentByMission";
 import { deleteStudentFromMission } from "./endpoint/deleteStudentFromMission";
+import { deleteTeacherFromMission } from "./endpoint/deleteTeacherFromMission";
 import { getTeacherByMission } from "./endpoint/getTeacherByMission";
 import { StudentMissionUpdate } from "./endpoint/switchStudentMission";
 
@@ -58,6 +59,8 @@ app.put("/student", createStudent)
 app.delete("/delete/student/:id", deleteStudent)
 
 app.delete("/student/mission/:id", deleteStudentFromMission)
+
+app.delete("/teacher/mission/:id", deleteTeacherFromMission)
 
 
 
