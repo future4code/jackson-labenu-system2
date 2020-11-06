@@ -1,5 +1,6 @@
 import {Response, Request} from "express"
 import {insertTeacher} from "../data/insertTeacher"
+import { insertTeacherMission } from "../data/insertTeacherMission"
 
 
 
@@ -15,6 +16,7 @@ export const createTeacher = async(req:Request, res:Response):Promise<void> => {
         }
 
         await insertTeacher(id, name, email, birthdate, mission_id)
+        await insertTeacherMission(id, mission_id)
 
         res.status(200).send({message: "User created sucessfully"})
         

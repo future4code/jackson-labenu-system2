@@ -42,13 +42,13 @@ app.post("/student/mission/update", studentMissionUpdate)
 
 app.post("/teacher/mission", teacherOnMission)
 
-app.get("/mission", getAllMissions)
+app.get("/mission", getAllMissions) // Pegar todas as turmas no sistema.
 
-app.get("/age/:id", getStudentAgeById)
+app.get("/age/:id", getStudentAgeById) // Pegar idade pelo ID do estudante.
 
-app.get("/student/mission", getStudentByMission)
+app.get("/student/mission/:id", getStudentByMission) // Encontrar estudantes em uma determinada turma.
 
-app.get("/teacher/mission", getTeacherByMission)
+app.get("/teacher/mission/:id", getTeacherByMission) // Encontrar professor em uma determinada turma.
 
 app.put("/mission", createMission);
 

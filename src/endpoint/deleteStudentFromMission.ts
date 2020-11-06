@@ -1,6 +1,6 @@
 import {Response, Request} from "express"
 import {removeStudentFromMission} from "../data/removeStudentFromMission"
-import { selectStudentById } from "../data/selectStudentById"
+import { selectStudentByIdRelation } from "../data/selectStudentByIdRelation"
 
 
 export const deleteStudentFromMission = async(req:Request, res:Response):Promise<void> => {
@@ -8,7 +8,7 @@ export const deleteStudentFromMission = async(req:Request, res:Response):Promise
 
     try {
         
-        const userExist = await selectStudentById(Number(req.params.id))
+        const userExist = await selectStudentByIdRelation(Number(req.params.id))
 
         if(!userExist.length) {
             res.statusCode = 400;
