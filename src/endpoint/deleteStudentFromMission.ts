@@ -7,7 +7,7 @@ export const deleteStudentFromMission = async(req:Request, res:Response):Promise
 
 
     try {
-
+        
         const userExist = await selectStudentById(Number(req.params.id))
 
         if(!userExist.length) {
