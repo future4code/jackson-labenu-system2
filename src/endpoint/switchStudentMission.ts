@@ -25,7 +25,7 @@ export const studentMissionUpdate = async(req:Request, res:Response):Promise<voi
         await switchStudentMission(student_id, mission_id)
         await updateStudentMission(student_id, mission_id)
 
-        res.status(200).send({message: "Uptate sucessfully"})
+        res.status(200).send({message: "Update realizado com sucesso."})
         
     } catch (error) {
         res.status(400).send(error.message)
